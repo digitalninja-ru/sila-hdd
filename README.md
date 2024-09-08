@@ -18,8 +18,12 @@
 4. Train ML regression
 5. Predict ML regression
 
+Подробнее в видео:
+https://drive.google.com/drive/u/0/folders/1LXDo_n4glNyF01S6PAPun5LcrLgm_6um
+
 
 ## Технологии
+
 Python 3.11
 Scikit-learn 1.5.1
 Optuna 4.0.0
