@@ -1,8 +1,10 @@
 import warnings
 
 import pandas as pd
+from pandas import read_csv
 from sklearn.preprocessing import LabelEncoder
 from tqdm import tqdm
+
 from config.config import settings
 
 
@@ -34,7 +36,6 @@ def run():
     # df.to_csv(settings.DATASET_PATH + '/dataset.csv')
 
 
-
     # marking Y for regression
     dataset_regression = pd.DataFrame()
     list_unique_serial_numbers = df['serial_number'].unique()
@@ -54,3 +55,19 @@ def run():
     # print(f'\n{grouped_by_serial_number}')
     # grouped_by_serial_number = df.loc[df['serial_number'] == 'WD-WX71A74PAYDF'].fillna(0)
     # print(f'\n{grouped_by_serial_number}')
+
+def runMock():
+    cvs1 = read_csv(settings.DATASET_PATH + '/df_failure_HDD_small_types_brands.csv')
+    cvs2 = read_csv(settings.DATASET_PATH + '/dataset_regression.csv')
+
+    print("le = LabelEncoder()")
+    print("df['model'] = le.fit_transform(df['model'])")
+    print("df['type'] = le.fit_transform(df['type'])")
+    print("df['brand'] = le.fit_transform(df['brand'])")
+    print("df['capacity_bytes'] = le.fit_transform(df['capacity_bytes'])")
+    print("df['month'] = pd.to_datetime(df['date']).dt.month")
+    print('')
+
+    print(cvs1)
+    print('')
+    print(cvs2)
