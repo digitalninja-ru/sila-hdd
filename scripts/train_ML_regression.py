@@ -91,7 +91,7 @@ def run():
 
         # Сохраняем модель, если она лучшая
         if trial.number == 0 or mse < study.best_value:
-            joblib.dump(model, "models/best_KNeighborsRegressor.pkl")
+            joblib.dump(model, settings.MODELS_PATH + "/best_KNeighborsRegressor.pkl")
 
         return mse
 

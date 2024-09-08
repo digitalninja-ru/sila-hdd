@@ -1,6 +1,7 @@
 import glob
 
 import pandas as pd
+from pandas import read_csv
 from tqdm import tqdm
 
 from config.config import settings
@@ -68,3 +69,14 @@ def run():
     print(f'Save to ./data/dataset/df_failure_HDD.csv...')
     df_failure_HDD.to_csv(settings.DATASET_PATH + '/df_failure_HDD.csv')
     print(df_failure_HDD)
+
+def runMock():
+    cvs = read_csv(settings.DATASET_PATH + '/df_failure_HDD.csv')
+
+    print('Get unique serial numbers & models failures HDD')
+    print('Collect dataset with failure HDD.')
+    print('')
+    print(f'Save to ./data/dataset/df_failure_HDD.csv...')
+    print('')
+    print(cvs)
+    print('')
